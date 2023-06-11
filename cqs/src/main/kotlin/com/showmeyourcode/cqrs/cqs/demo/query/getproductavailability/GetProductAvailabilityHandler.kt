@@ -12,7 +12,7 @@ class GetProductAvailabilityHandler(private val repository: InMemoryProductRepos
 
     override fun handle(query: GetProductAvailabilityQuery): GetProductAvailabilityQueryResult {
         log.info("Handling 'GetProductAvailability' command...")
-        val p =repository.getProduct(query.productId)
+        val p = repository.getProduct(query.productId)
         return GetProductAvailabilityQueryResult(p?.availability ?: 0)
     }
 }

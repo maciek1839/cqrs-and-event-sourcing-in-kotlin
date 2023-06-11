@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 @Component
-class AddProductHandler (private val repository: InMemoryProductRepository) : CommandHandler<AddProductCommandResult, AddProductCommand> {
+class AddProductHandler(private val repository: InMemoryProductRepository) : CommandHandler<AddProductCommandResult, AddProductCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     override fun handle(command: AddProductCommand): AddProductCommandResult {
         log.info("Handling 'AddProductCommand' command...")
-        return AddProductCommandResult(repository.addProduct(Product(command.name,command.availability)))
+        return AddProductCommandResult(repository.addProduct(Product(command.name, command.availability)))
     }
 }

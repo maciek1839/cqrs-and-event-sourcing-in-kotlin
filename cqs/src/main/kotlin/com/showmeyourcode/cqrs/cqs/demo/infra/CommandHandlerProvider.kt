@@ -7,18 +7,15 @@ import com.showmeyourcode.cqrs.cqs.demo.command.changeavailability.ChangeProduct
 import com.showmeyourcode.cqrs.cqs.demo.command.changeavailability.ChangeProductAvailabilityHandler
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
-import org.springframework.web.reactive.function.server.ServerResponse
-
 
 @Component
 class CommandHandlerProvider constructor(private val applicationContext: ApplicationContext) {
 
-    fun handleAddProduct(cmd:AddProductCommand):AddProductCommandResult{
+    fun handleAddProduct(cmd: AddProductCommand): AddProductCommandResult {
         return applicationContext.getBean(AddProductHandler::class.java).handle(cmd)
     }
 
-    fun changeProductAvailability(cmd:ChangeProductAvailabilityCommand){
+    fun changeProductAvailability(cmd: ChangeProductAvailabilityCommand) {
         return applicationContext.getBean(ChangeProductAvailabilityHandler::class.java).handle(cmd)
     }
 }
-

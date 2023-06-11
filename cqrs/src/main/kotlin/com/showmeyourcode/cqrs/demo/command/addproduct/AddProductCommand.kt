@@ -6,4 +6,4 @@ import lombok.Setter
 
 @Getter
 @Setter
-class AddProductCommand(val name: String,val availability: Int) : Command<AddProductCommandResult>
+class AddProductCommand(val name: String, val availability: Int) : Command<AddProductCommandResult>

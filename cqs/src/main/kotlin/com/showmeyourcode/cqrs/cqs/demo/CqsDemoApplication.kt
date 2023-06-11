@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class CqsDemoApplication
 
 fun main(args: Array<String>) {
-	runApplication<CqsDemoApplication>(*args)
+    runApplication<CqsDemoApplication>(*args)
 }

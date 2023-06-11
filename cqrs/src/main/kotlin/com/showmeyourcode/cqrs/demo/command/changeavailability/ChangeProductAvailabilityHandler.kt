@@ -10,18 +10,19 @@ import org.springframework.stereotype.Component
 import java.time.LocalDateTime
 
 @Component
-class ChangeProductAvailabilityHandler(private val repository: ProductCommandRepository,
-                                       private val publisher: EventPublisher
-):
+class ChangeProductAvailabilityHandler(
+    private val repository: ProductCommandRepository,
+    private val publisher: EventPublisher
+) :
     CommandHandler<Unit, ChangeProductAvailabilityCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     override fun handle(command: ChangeProductAvailabilityCommand) {
         log.info("Handling 'ChangeProductAvailabilityHandler' command...")
         val product = repository.findById(command.id)
-        if (product.isPresent){
-            product.get().availability=command.newAvailability
-            product.get().modifiedDate =  LocalDateTime.now()
+        if (product.isPresent) {
+            product.get().availability = command.newAvailability
+            product.get().modifiedDate = LocalDateTime.now()
 
             publisher.publish(ProductEvent.ProductAvailabilityChanged(this, product.get()))
         }

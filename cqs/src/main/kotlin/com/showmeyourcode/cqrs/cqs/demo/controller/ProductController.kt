@@ -1,6 +1,5 @@
 package com.showmeyourcode.cqrs.cqs.demo.controller
 
-
 import com.showmeyourcode.cqrs.cqs.demo.command.addproduct.AddProductCommand
 import com.showmeyourcode.cqrs.cqs.demo.command.addproduct.AddProductCommandResult
 import com.showmeyourcode.cqrs.cqs.demo.command.changeavailability.ChangeProductAvailabilityCommand
@@ -24,7 +23,7 @@ class ProductController(
 
     @PostMapping("/addProduct")
     fun addProduct(@RequestBody command: AddProductCommand): Mono<AddProductCommandResult> {
-        return Mono.just(commandHandler.handleAddProduct(command));
+        return Mono.just(commandHandler.handleAddProduct(command))
     }
 
     @PostMapping("/changeProductAvailability")

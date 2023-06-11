@@ -32,6 +32,7 @@
         <spring-cloud.version>2020.0.4</spring-cloud.version>
 
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <ktlint-plugin.version>1.15.2</ktlint-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -94,6 +95,20 @@
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
+                <groupId>com.github.gantsign.maven</groupId>
+                <artifactId>ktlint-maven-plugin</artifactId>
+                <version>${ktlint-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>verify-code-style</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <configuration>
@@ -118,7 +133,6 @@
                         <version>${kotlin.version}</version>
                     </dependency>
                 </dependencies>
-
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -126,7 +140,6 @@
                             <goal>compile</goal>
                         </goals>
                     </execution>
-
                     <execution>
                         <id>test-compile</id>
                         <goals>

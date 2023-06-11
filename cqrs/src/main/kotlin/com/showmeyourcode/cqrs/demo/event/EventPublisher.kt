@@ -10,4 +10,3 @@ class EventPublisher(private val eventPublisher: ApplicationEventPublisher) {
         eventPublisher.publishEvent(event)
     }
 }
-

@@ -39,7 +39,7 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromObject(changeAvailability))
             .exchange()
-            .expectStatus().isOk;
+            .expectStatus().isOk
     }
 
     @Test
@@ -50,7 +50,7 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromObject(getAvailability))
             .exchange()
-            .expectStatus().isOk;
+            .expectStatus().isOk
     }
 
     @Test
@@ -61,6 +61,6 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromObject(getProducts))
             .exchange()
-            .expectStatus().isOk;
+            .expectStatus().isOk
     }
 }

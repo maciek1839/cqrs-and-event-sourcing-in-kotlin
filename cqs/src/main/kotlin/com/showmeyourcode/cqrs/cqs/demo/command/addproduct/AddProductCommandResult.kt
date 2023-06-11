@@ -6,5 +6,4 @@ import java.util.*
 
 @Getter
 @Setter
-class AddProductCommandResult(val id: UUID) {
-}
+class AddProductCommandResult(val id: UUID)

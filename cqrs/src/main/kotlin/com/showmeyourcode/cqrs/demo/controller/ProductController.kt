@@ -23,7 +23,7 @@ class ProductController(
 
     @PostMapping("/addProduct")
     fun addProduct(@RequestBody command: AddProductCommand): Mono<AddProductCommandResult> {
-        return Mono.just(commandHandler.handleAddProduct(command));
+        return Mono.just(commandHandler.handleAddProduct(command))
     }
 
     @PostMapping("/changeProductAvailability")

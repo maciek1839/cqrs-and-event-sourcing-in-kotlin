@@ -17,7 +17,6 @@ import org.springframework.test.web.reactive.server.WebTestClient
 import org.springframework.web.reactive.function.BodyInserters
 import java.util.*
 
-
 @ExtendWith(SpringExtension::class)
 @WebFluxTest
 @AutoConfigureDataMongo
@@ -44,7 +43,7 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromObject(changeAvailability))
             .exchange()
-            .expectStatus().isOk;
+            .expectStatus().isOk
     }
 
     @Test
@@ -55,7 +54,7 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromObject(getAvailability))
             .exchange()
-            .expectStatus().isOk;
+            .expectStatus().isOk
     }
 
     @Test
@@ -66,6 +65,6 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromObject(productsQuery))
             .exchange()
-            .expectStatus().isOk;
+            .expectStatus().isOk
     }
 }

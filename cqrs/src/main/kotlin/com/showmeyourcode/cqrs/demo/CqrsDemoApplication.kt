@@ -13,5 +13,5 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 open class CqrsDemoApplication
 
 fun main(args: Array<String>) {
-	runApplication<CqrsDemoApplication>(*args)
+    runApplication<CqrsDemoApplication>(*args)
 }

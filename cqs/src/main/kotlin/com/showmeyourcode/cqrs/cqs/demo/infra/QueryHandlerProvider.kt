@@ -20,4 +20,3 @@ class QueryHandlerProvider constructor(private val applicationContext: Applicati
         return applicationContext.getBean(GetProductsHandler::class.java).handle(query)
     }
 }
-
