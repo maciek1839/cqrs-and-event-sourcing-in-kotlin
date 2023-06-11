@@ -1,7 +1,7 @@
 package com.showmeyourcode.cqrs.demo.eventhandler
 
 import com.showmeyourcode.cqrs.demo.domain.command.ProductEvent
-import com.showmeyourcode.cqrs.demo.domain.query.ProductQ
+import com.showmeyourcode.cqrs.demo.domain.query.ProductQuery
 import com.showmeyourcode.cqrs.demo.repository.query.ProductQueryRepository
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -15,12 +15,12 @@ class EventProjectionHandler(private val repository: ProductQueryRepository) {
     @EventListener
     fun handleProductCreatedEvent(event: ProductEvent.ProductCreated) {
         log.info("Handling an event - $event")
-        repository.save(ProductQ(event.newProduct.id, event.newProduct.name, event.newProduct.availability))
+        repository.save(ProductQuery(event.newProduct.id, event.newProduct.name, event.newProduct.availability))
     }
 
     @EventListener
     fun handleProductAvailabilityChangedEvent(event: ProductEvent.ProductAvailabilityChanged) {
         log.info("Handling an event - $event")
-        repository.save(ProductQ(event.newProduct.id, event.newProduct.name, event.newProduct.availability))
+        repository.save(ProductQuery(event.newProduct.id, event.newProduct.name, event.newProduct.availability))
     }
 }

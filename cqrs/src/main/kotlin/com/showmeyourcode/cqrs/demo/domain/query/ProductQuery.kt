@@ -5,7 +5,7 @@ import javax.persistence.Entity
 import javax.persistence.Id
 
 @Entity
-data class ProductQ(
+data class ProductQuery(
     @Id
     val id: UUID = UUID.randomUUID(),
     val name: String?,

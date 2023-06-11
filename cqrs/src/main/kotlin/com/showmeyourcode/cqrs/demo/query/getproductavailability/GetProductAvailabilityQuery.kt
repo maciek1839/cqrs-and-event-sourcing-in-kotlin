@@ -4,3 +4,5 @@ import com.showmeyourcode.cqrs.demo.infra.Query
 import java.util.*
 
 class GetProductAvailabilityQuery(val productId: UUID) : Query<GetProductAvailabilityQueryResult>
+
+class GetProductAvailabilityQueryResult(val availability: Int)

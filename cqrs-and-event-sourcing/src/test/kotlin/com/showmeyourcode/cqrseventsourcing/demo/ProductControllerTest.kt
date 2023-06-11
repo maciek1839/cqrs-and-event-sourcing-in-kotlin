@@ -2,7 +2,7 @@ package com.showmeyourcode.cqrseventsourcing.demo
 
 import com.showmeyourcode.cqrseventsourcing.demo.command.addproduct.AddProductCommand
 import com.showmeyourcode.cqrseventsourcing.demo.command.changeavailability.ChangeProductAvailabilityCommand
-import com.showmeyourcode.cqrseventsourcing.demo.domain.query.ProductQ
+import com.showmeyourcode.cqrseventsourcing.demo.domain.query.ProductQuery
 import com.showmeyourcode.cqrseventsourcing.demo.query.getproductavailability.GetProductAvailabilityQuery
 import com.showmeyourcode.cqrseventsourcing.demo.query.getproducts.GetProductsQuery
 import com.showmeyourcode.cqrseventsourcing.demo.repository.query.ProductQueryRepository
@@ -55,7 +55,7 @@ class ProductControllerTest(
     @Test
     fun shouldPerformGetProductAvailabilityQuery() {
         val productId = UUID.fromString("11b0673f-e1d6-4dea-8525-ce2e45946fab")
-        queryRepository.save(ProductQ(productId, "Example Name", 100))
+        queryRepository.save(ProductQuery(productId, "Example Name", 100))
 
         val getAvailability =
             GetProductAvailabilityQuery(productId)

@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 @Document(collection = "products")
-data class ProductC(
+data class ProductCommand(
     @Id
     val id: UUID = UUID.randomUUID(), // : ObjectId = ObjectId.get(),
     val name: String,

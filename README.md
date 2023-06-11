@@ -20,11 +20,11 @@ The example is based on stores and products.
 ## How to start?
 
 1. Run one of the Maven modules, for example: `cqrs`
-1. Run Spring Boot app.
-1. Check H2 console - `localhost:8082`
-1. Set up a connection to MongoDB  
+2. Run Spring Boot app.
+3. Check H2 console - `localhost:8082`
+4. Set up a connection to MongoDB  
   ![img](./docs/setup-db/mongo-gui.PNG)
-1. Load the Postman collection to send requests.
+5. Load the Postman collection to send requests.
 
 ## CQS & CQRS & Event sourcing introduction
 

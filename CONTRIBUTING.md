@@ -13,6 +13,10 @@ Ref: https://kotlinlang.org/docs/reference/coding-conventions.html#naming-rules
 
 Names of packages are always lower case and do not use underscores (org.example.myproject). Using multi-word names is generally discouraged, but if you do need to use multiple words, you can either simply concatenate them together or use camel humps (org.example.myProject). Ref: https://kotlinlang.org/docs/coding-conventions.html#naming-rules
 
+## Postman
+
+Import existing collection from `CQRS demo.postman_collection.json`.
+
 ## Maven commands
 
 - mvn clean install -DskipTests

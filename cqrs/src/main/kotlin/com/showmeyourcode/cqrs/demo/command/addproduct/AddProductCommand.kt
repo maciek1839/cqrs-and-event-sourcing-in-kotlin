@@ -1,9 +1,8 @@
 package com.showmeyourcode.cqrs.demo.command.addproduct
 
 import com.showmeyourcode.cqrs.demo.infra.Command
-import lombok.Getter
-import lombok.Setter
+import java.util.*
 
-@Getter
-@Setter
 class AddProductCommand(val name: String, val availability: Int) : Command<AddProductCommandResult>
+
+class AddProductCommandResult(val id: UUID)
