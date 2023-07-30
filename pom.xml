@@ -34,7 +34,7 @@
         </sonar.coverage.jacoco.xmlReportPaths>
 
 
-        <kotlin.version>1.5.31</kotlin.version>
+        <kotlin.version>1.9.0</kotlin.version>
         <spring-cloud.version>2020.0.4</spring-cloud.version>
 
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
