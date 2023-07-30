@@ -24,8 +24,8 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
         <sonar.organization>showmeyourcodeyoutube</sonar.organization>
         <sonar.coverage.jacoco.xmlReportPaths>
@@ -36,6 +36,7 @@
 
         <kotlin.version>1.9.0</kotlin.version>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
+        <embed-mongo.version>4.5.2</embed-mongo.version>
 
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
         <ktlint-plugin.version>1.16.0</ktlint-plugin.version>
@@ -77,6 +78,10 @@
         <dependency>
             <groupId>org.jetbrains.kotlinx</groupId>
             <artifactId>kotlinx-coroutines-reactor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
 
         <dependency>
