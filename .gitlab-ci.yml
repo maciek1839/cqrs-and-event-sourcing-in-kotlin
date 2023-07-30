@@ -1,5 +1,5 @@
 default:
-  image: amazoncorretto:11.0.7
+  image: amazoncorretto:11.0.7@sha256:277d3f769c1a1937ef2ecfe471875affa34e455506b9d9922ef43dee6db8d40e
   before_script:
     - ': before_script'
     - chmod +x mvnw
