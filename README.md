@@ -15,7 +15,6 @@ The example is based on stores and products.
 
 - Kotlin
 - Spring Boot Reactive stack
-- JDK 11 (AWS Corretto)
 
 ## How to start?
 
@@ -23,7 +22,7 @@ The example is based on stores and products.
 2. Run Spring Boot app.
 3. Check H2 console - `localhost:8082`
 4. Set up a connection to MongoDB  
-  ![img](./docs/setup-db/mongo-gui.PNG)
+  ![img](./docs/setup-db/mongo-gui.png)
 5. Load the Postman collection to send requests.
 
 ## CQS & CQRS & Event sourcing introduction

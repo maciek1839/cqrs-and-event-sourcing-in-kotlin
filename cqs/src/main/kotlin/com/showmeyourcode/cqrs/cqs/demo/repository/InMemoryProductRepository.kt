@@ -1,12 +1,12 @@
 package com.showmeyourcode.cqrs.cqs.demo.repository
 
 import com.showmeyourcode.cqrs.cqs.demo.domain.Product
+import jakarta.annotation.PostConstruct
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
-import javax.annotation.PostConstruct
 
 @Component
 class InMemoryProductRepository {

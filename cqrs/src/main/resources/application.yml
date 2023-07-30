@@ -8,6 +8,5 @@ spring:
     driverClassName: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-  mongodb:
-    embedded:
-      version: 3.0.0
+
+de.flapdoodle.mongodb.embedded.version: 4.0.2

@@ -25,6 +25,8 @@ Import existing collection from `CQRS demo.postman_collection.json`.
 
 Use a command: ``mvn ktlint:format``
 
+*Add a JVM option `--add-opens=java.base/java.lang=ALL-UNNAMED` if you encounter any errors running the plain command.*
+
 Ref: https://gantsign.com/ktlint-maven-plugin/usage.html
 
 ### Release a new version

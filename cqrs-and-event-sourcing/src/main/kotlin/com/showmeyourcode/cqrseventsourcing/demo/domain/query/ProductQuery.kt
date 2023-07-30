@@ -1,8 +1,8 @@
 package com.showmeyourcode.cqrseventsourcing.demo.domain.query
 
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
 import java.util.*
-import javax.persistence.Entity
-import javax.persistence.Id
 
 @Entity
 data class ProductQuery(
