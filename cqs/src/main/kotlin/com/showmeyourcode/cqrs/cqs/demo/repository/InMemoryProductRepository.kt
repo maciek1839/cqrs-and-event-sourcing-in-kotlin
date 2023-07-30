@@ -15,11 +15,19 @@ class InMemoryProductRepository {
 
     @PostConstruct
     private fun init() {
-        log.info("Initializing in-memory database...")
+        log.info("Initializing an in-memory database...")
         products[UUID.fromString("11111111-1111-1111-1111-111111111111")] =
-            Product(UUID.fromString("11111111-1111-1111-1111-111111111111"), "ExampleInMemoryProductName1", 1000)
+            Product(
+                UUID.fromString("11111111-1111-1111-1111-111111111111"),
+                "ExampleInMemoryProductName1",
+                1000
+            )
         products[UUID.fromString("22222222-2222-2222-2222-222222222222")] =
-            Product(UUID.fromString("22222222-2222-2222-2222-222222222222"), "ExampleInMemoryProductName2", 1000)
+            Product(
+                UUID.fromString("22222222-2222-2222-2222-222222222222"),
+                "ExampleInMemoryProductName2",
+                1000
+            )
     }
 
     fun addProduct(product: Product): UUID {

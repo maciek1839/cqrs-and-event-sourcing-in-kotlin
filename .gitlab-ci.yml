@@ -47,9 +47,6 @@ sonarcloud-check:
       - .sonar/cache
   script:
     - ./mvnw verify sonar:sonar -Dsonar.projectKey=ShowMeYourCodeYouTube_cqrs-and-event-sourcing-in-kotlin
-  only:
-    - merge_requests
-    - master
 
 build:
   stage: build
