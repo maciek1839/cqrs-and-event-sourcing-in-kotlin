@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 @Component
-class ChangeProductAvailabilityHandler(private val repository: InMemoryProductRepository) : CommandHandler<Unit, ChangeProductAvailabilityCommand> {
+class ChangeProductAvailabilityHandler(
+    private val repository: InMemoryProductRepository,
+) : CommandHandler<Unit, ChangeProductAvailabilityCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     override fun handle(command: ChangeProductAvailabilityCommand) {

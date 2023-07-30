@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 @Component
 class ChangeProductAvailabilityHandler(
     private val repository: ProductCommandRepository,
-    private val publisher: EventPublisher
+    private val publisher: EventPublisher,
 ) :
     CommandHandler<Unit, ChangeProductAvailabilityCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)

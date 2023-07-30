@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono
 @RestController
 class ProductController(
     private val commandHandler: CommandHandlerProvider,
-    private val queryHandlerProvider: QueryHandlerProvider
+    private val queryHandlerProvider: QueryHandlerProvider,
 ) {
 
     @PostMapping("/addProduct")

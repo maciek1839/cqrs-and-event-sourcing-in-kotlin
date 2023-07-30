@@ -37,7 +37,10 @@ class ProductControllerTest(@Autowired private var webClient: WebTestClient) {
 
     @Test
     fun shouldPerformChangeProductAvailabilityCommand() {
-        val changeAvailability = ChangeProductAvailabilityCommand(UUID.fromString("d76e796b-d809-4adf-abbe-34734eecf8d4"), 100)
+        val changeAvailability = ChangeProductAvailabilityCommand(
+            UUID.fromString("d76e796b-d809-4adf-abbe-34734eecf8d4"),
+            100,
+        )
         webClient.post()
             .uri("/changeProductAvailability")
             .contentType(MediaType.APPLICATION_JSON)

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component
 @Component
 class AddProductHandler(
     private val eventStore: EventStore,
-    private val eventBus: EventBus
+    private val eventBus: EventBus,
 ) : CommandHandler<AddProductCommandResult, AddProductCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 

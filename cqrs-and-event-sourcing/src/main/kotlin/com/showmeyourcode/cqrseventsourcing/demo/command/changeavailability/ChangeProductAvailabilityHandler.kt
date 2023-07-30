@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component
 @Component
 class ChangeProductAvailabilityHandler(
     private val eventStore: EventStore,
-    private val eventBus: EventBus
+    private val eventBus: EventBus,
 ) :
     CommandHandler<Unit, ChangeProductAvailabilityCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)

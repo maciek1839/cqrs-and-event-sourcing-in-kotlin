@@ -9,5 +9,5 @@ data class ProductQuery(
     @Id
     val id: UUID = UUID.randomUUID(),
     val name: String?,
-    val availability: Int = 0
+    val availability: Int = 0,
 )

@@ -55,8 +55,8 @@ class Product : DomainEntity<ProductID>() {
             ProductCreatedEvent(
                 productID = id,
                 name = command.name,
-                availability = command.availability
-            )
+                availability = command.availability,
+            ),
         )
         log.info("New product created. [productID={}]", id)
     }
@@ -65,7 +65,7 @@ class Product : DomainEntity<ProductID>() {
         id = event.productID
         productInformation = ProductInformation(
             name = event.name,
-            availability = event.availability
+            availability = event.availability,
         )
     }
 
@@ -75,8 +75,8 @@ class Product : DomainEntity<ProductID>() {
         raise(
             ProductUpdatedEvent(
                 productID = id!!,
-                availability = command.newAvailability
-            )
+                availability = command.newAvailability,
+            ),
         )
         log.info("Product data updated. [productID={}]", id)
     }
@@ -84,7 +84,7 @@ class Product : DomainEntity<ProductID>() {
     fun apply(event: ProductUpdatedEvent) {
         this.productInformation = ProductInformation(
             name = productInformation!!.name,
-            availability = event.availability
+            availability = event.availability,
         )
     }
 }

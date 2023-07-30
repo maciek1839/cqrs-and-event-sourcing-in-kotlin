@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 @Component
-class GetProductsHandler(private val repository: InMemoryProductRepository) : QueryHandler<GetProductsQueryResult, GetProductsQuery> {
+class GetProductsHandler(
+    private val repository: InMemoryProductRepository,
+) : QueryHandler<GetProductsQueryResult, GetProductsQuery> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     override fun handle(query: GetProductsQuery?): GetProductsQueryResult {

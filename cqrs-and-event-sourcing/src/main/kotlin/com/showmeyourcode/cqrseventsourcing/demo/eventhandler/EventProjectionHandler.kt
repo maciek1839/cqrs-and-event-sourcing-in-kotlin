@@ -22,8 +22,8 @@ class EventProjectionHandler(private val repository: ProductQueryRepository) {
                 ProductQuery(
                     event.productID,
                     event.name,
-                    event.availability
-                )
+                    event.availability,
+                ),
             )
             is ProductUpdatedEvent -> {
                 val existingProduct = repository.getById(event.productID)
@@ -31,8 +31,8 @@ class EventProjectionHandler(private val repository: ProductQueryRepository) {
                     ProductQuery(
                         event.productID,
                         existingProduct.name,
-                        event.availability
-                    )
+                        event.availability,
+                    ),
                 )
             }
             else -> log.warn("Event not handled! $event")

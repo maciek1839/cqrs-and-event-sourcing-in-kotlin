@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
 @Component
 class AddProductHandler(
     private val repository: ProductCommandRepository,
-    private val publisher: EventPublisher
+    private val publisher: EventPublisher,
 ) : CommandHandler<AddProductCommandResult, AddProductCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 

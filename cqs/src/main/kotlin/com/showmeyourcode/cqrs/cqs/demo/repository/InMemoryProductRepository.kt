@@ -20,13 +20,13 @@ class InMemoryProductRepository {
             Product(
                 UUID.fromString("11111111-1111-1111-1111-111111111111"),
                 "ExampleInMemoryProductName1",
-                1000
+                1000,
             )
         products[UUID.fromString("22222222-2222-2222-2222-222222222222")] =
             Product(
                 UUID.fromString("22222222-2222-2222-2222-222222222222"),
                 "ExampleInMemoryProductName2",
-                1000
+                1000,
             )
     }
 

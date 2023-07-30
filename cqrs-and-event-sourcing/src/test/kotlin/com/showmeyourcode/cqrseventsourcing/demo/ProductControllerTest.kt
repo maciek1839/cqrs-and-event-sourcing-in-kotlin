@@ -24,7 +24,7 @@ import java.util.*
 @ComponentScan(basePackages = ["com.showmeyourcode.cqrseventsourcing.demo"])
 class ProductControllerTest(
     @Autowired private var webClient: WebTestClient,
-    @Autowired private val queryRepository: ProductQueryRepository
+    @Autowired private val queryRepository: ProductQueryRepository,
 ) {
 
     @Test
@@ -42,7 +42,7 @@ class ProductControllerTest(
     fun shouldPerformChangeProductAvailabilityCommand() {
         val changeAvailability = ChangeProductAvailabilityCommand(
             UUID.fromString("d76e796b-d809-4adf-abbe-34734eecf8d4"),
-            100
+            100,
         )
         webClient.post()
             .uri("/changeProductAvailability")

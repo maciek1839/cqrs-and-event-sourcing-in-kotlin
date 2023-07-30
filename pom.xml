@@ -37,8 +37,8 @@
         <kotlin.version>1.5.31</kotlin.version>
         <spring-cloud.version>2020.0.4</spring-cloud.version>
 
-        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
-        <ktlint-plugin.version>1.15.2</ktlint-plugin.version>
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <ktlint-plugin.version>1.16.0</ktlint-plugin.version>
     </properties>
 
     <dependencyManagement>

@@ -12,5 +12,5 @@ data class ProductCommand(
     val name: String,
     var availability: Int,
     val createdDate: LocalDateTime = LocalDateTime.now(),
-    var modifiedDate: LocalDateTime = LocalDateTime.now()
+    var modifiedDate: LocalDateTime = LocalDateTime.now(),
 )

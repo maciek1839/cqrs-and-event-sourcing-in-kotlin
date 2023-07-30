@@ -1,5 +1,5 @@
 default:
-  image: amazoncorretto:11.0.7
+  image: amazoncorretto:11.0.20@sha256:39fdd3df2e3bb6d439b52bbd8bd2a0b7a48fcc342e327d2b56c56a7bd9b4da6b
   before_script:
     - ': before_script'
     - chmod +x mvnw
@@ -51,7 +51,10 @@ sonarcloud-check:
 build:
   stage: build
   script:
-    - ./mvnw clean install -DskipTests $MAVEN_OPTS
+    # -U, --update-snapshots
+    # Forces a check for updated releases and snapshots on remote repositories
+    # Ref: https://books.sonatype.com/mvnref-book/reference/running-sect-options.html
+    - ./mvnw clean install -U -DskipTests $MAVEN_OPTS
 
 pages:
   stage: deploy
