@@ -21,24 +21,31 @@ class ProductController(
     private val queryHandlerProvider: QueryHandlerProvider,
 ) {
 
-    @PostMapping("/addProduct")
+    companion object {
+        const val ADD_PRODUCT_PATH = "/addProduct"
+        const val CHANGE_PRODUCT_AVAILABILITY_PATH = "/changeProductAvailability"
+        const val GET_PRODUCT_AVAILABILITY_PATH = "/getProductAvailability"
+        const val GET_PRODUCTS_PATH = "/getProducts"
+    }
+
+    @PostMapping(ADD_PRODUCT_PATH)
     fun addProduct(@RequestBody command: AddProductCommand): Mono<AddProductCommandResult> {
         return Mono.just(commandHandler.handleAddProduct(command))
     }
 
-    @PostMapping("/changeProductAvailability")
-    fun buyAdditionalCover(@RequestBody command: ChangeProductAvailabilityCommand): Mono<ServerResponse> {
+    @PostMapping(CHANGE_PRODUCT_AVAILABILITY_PATH)
+    fun changeProductAvailability(@RequestBody command: ChangeProductAvailabilityCommand): Mono<ServerResponse> {
         commandHandler.changeProductAvailability(command)
         return ServerResponse.noContent().build()
     }
 
-    @PostMapping("/getProductAvailability")
-    fun buyAdditionalCover(@RequestBody query: GetProductAvailabilityQuery): Mono<GetProductAvailabilityQueryResult> {
+    @PostMapping(GET_PRODUCT_AVAILABILITY_PATH)
+    fun getProductAvailability(@RequestBody query: GetProductAvailabilityQuery): Mono<GetProductAvailabilityQueryResult> {
         return Mono.just(queryHandlerProvider.getProductAvailability(query))
     }
 
-    @PostMapping("/getProducts")
-    fun buyAdditionalCover(@RequestBody query: GetProductsQuery): Mono<GetProductsQueryResult> {
+    @PostMapping(GET_PRODUCTS_PATH)
+    fun getProducts(@RequestBody query: GetProductsQuery): Mono<GetProductsQueryResult> {
         return Mono.just(queryHandlerProvider.getProducts(query))
     }
 }

@@ -15,12 +15,13 @@ class AddProductHandler(
 ) : CommandHandler<AddProductCommandResult, AddProductCommand> {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
-    override fun handle(command: AddProductCommand) {
+    override fun handle(command: AddProductCommand): AddProductCommandResult {
         log.info("Handling 'AddProductCommand' command...")
         val product = Product()
-        product.handle(command)
+        val productId = product.handle(command)
         val events = product.occurredEvents()
         eventBus.sendAll(events)
         eventStore.saveAll(events)
+        return AddProductCommandResult(productId)
     }
 }

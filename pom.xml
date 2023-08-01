@@ -33,13 +33,13 @@
             ${project.basedir}/../coverage-report/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
 
-
         <kotlin.version>1.9.0</kotlin.version>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
         <embed-mongo.version>4.7.0</embed-mongo.version>
 
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
         <ktlint-plugin.version>1.16.0</ktlint-plugin.version>
+        <kotest.version>5.6.2</kotest.version>
     </properties>
 
     <dependencyManagement>
@@ -92,6 +92,12 @@
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-assertions-core-jvm</artifactId>
+            <version>${kotest.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

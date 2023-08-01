@@ -15,7 +15,7 @@ Names of packages are always lower case and do not use underscores (org.example.
 
 ## Postman
 
-Import existing collection from `CQRS demo.postman_collection.json`.
+Import existing collection from `CQRS-demo.postman_collection.json`.
 
 ## Maven commands
 

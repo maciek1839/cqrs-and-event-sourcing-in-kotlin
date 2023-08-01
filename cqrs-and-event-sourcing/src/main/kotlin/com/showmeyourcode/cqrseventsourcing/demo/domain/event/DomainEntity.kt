@@ -39,13 +39,13 @@ abstract class DomainEntity<T : Any>(var id: T? = null) {
             return false
         }
         return EqualsBuilder()
-            .append(this.id, (other as DomainEntity<*>).id) // Only on the ID!
+            .append(this.id, (other as DomainEntity<*>).id)
             .isEquals
     }
 
     override fun hashCode(): Int {
         return HashCodeBuilder()
-            .append(id) // Only on the ID!
+            .append(id)
             .toHashCode()
     }
 }

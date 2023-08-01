@@ -2,14 +2,13 @@ package com.showmeyourcode.cqrs.demo.query.getproductavailability
 
 import com.showmeyourcode.cqrs.demo.infra.QueryHandler
 import com.showmeyourcode.cqrs.demo.repository.query.ProductQueryRepository
-import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 @Component
 class GetProductAvailabilityHandler(private val repository: ProductQueryRepository) :
     QueryHandler<GetProductAvailabilityQueryResult, GetProductAvailabilityQuery> {
-    private val log: Logger = LoggerFactory.getLogger(this.javaClass)
+    private val log = LoggerFactory.getLogger(this.javaClass)
 
     override fun handle(query: GetProductAvailabilityQuery): GetProductAvailabilityQueryResult {
         log.info("Handling 'GetProductAvailability' command...")

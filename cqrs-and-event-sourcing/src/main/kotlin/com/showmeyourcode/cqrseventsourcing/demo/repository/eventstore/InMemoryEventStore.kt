@@ -23,7 +23,7 @@ class InMemoryEventStore : EventStore {
         return allFor(productNumber).isNotEmpty()
     }
 
-    fun clear() {
+    override fun deleteAll() {
         events.clear()
     }
 }

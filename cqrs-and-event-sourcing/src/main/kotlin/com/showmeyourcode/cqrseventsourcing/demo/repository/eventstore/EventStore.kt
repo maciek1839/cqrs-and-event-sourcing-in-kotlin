@@ -13,4 +13,6 @@ interface EventStore {
     fun allFor(productNumber: ProductID): List<Event>
 
     fun exists(productNumber: ProductID): Boolean
+
+    fun deleteAll()
 }

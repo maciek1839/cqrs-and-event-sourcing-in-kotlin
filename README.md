@@ -15,6 +15,7 @@ The example is based on stores and products.
 
 - Kotlin
 - Spring Boot Reactive stack
+- Kotest
 
 ## How to start?
 

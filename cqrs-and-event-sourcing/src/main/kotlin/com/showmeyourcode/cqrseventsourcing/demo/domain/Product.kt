@@ -46,7 +46,7 @@ class Product : DomainEntity<ProductID>() {
         return this
     }
 
-    fun handle(command: AddProductCommand) {
+    fun handle(command: AddProductCommand): UUID {
         Assert.hasText(command.name, "Product name must not be empty!")
         Assert.notNull(command.availability, "Product availability must not be empty!")
         val id = UUID.randomUUID()
@@ -59,6 +59,7 @@ class Product : DomainEntity<ProductID>() {
             ),
         )
         log.info("New product created. [productID={}]", id)
+        return id
     }
 
     fun apply(event: ProductCreatedEvent) {

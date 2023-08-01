@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "a932a511-1d23-4338-93f1-6ba79b384459",
-		"name": "CQRS demo",
+		"name": "CQRS-demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
