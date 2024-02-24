@@ -38,6 +38,7 @@
         <embed-mongo.version>4.7.0</embed-mongo.version>
 
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <depedency-check-plugin.version>8.0.1</depedency-check-plugin.version>
         <ktlint-plugin.version>1.16.0</ktlint-plugin.version>
         <kotest.version>5.6.2</kotest.version>
     </properties>
@@ -106,6 +107,15 @@
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${depedency-check-plugin.version}</version>
+                <configuration>
+                    <!-- keep default -->
+                    <failBuildOnCVSS>11</failBuildOnCVSS>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.github.gantsign.maven</groupId>
                 <artifactId>ktlint-maven-plugin</artifactId>

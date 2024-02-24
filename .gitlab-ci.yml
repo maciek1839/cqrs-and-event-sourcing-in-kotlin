@@ -15,6 +15,8 @@ variables:
   SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
   SAST_JAVA_VERSION: "17" # Required by SAST scanning
+  OWASP_REPORT_NAME: "dependency-check-report.html"
+  OWASP_REPORT_PATH: "target/$OWASP_REPORT_NAME"
 
 cache:
   key: maven-cache
@@ -56,13 +58,35 @@ build:
     # Ref: https://books.sonatype.com/mvnref-book/reference/running-sect-options.html
     - ./mvnw clean install -U -DskipTests $MAVEN_OPTS
 
+# An alternative to SpotBugs
+check-dependencies:
+  stage: build
+  allow_failure: true
+  script:
+    - ./mvnw package -DskipTests dependency-check:aggregate $MAVEN_OPTS
+  artifacts:
+    paths:
+      - $OWASP_REPORT_PATH
+    when: always
+    expire_in: 1 hour
+  only:
+    - merge_requests
+    - master
+
 pages:
   stage: deploy
+  variables:
+    PUBLIC_COPY_FOLDER: "public-copy"
   script:
     - echo 'Cleaning old pages'
+    # make a copy of all static pages
+    - '[ -d public ] && echo "Found previous static resources" && cp -r public $PUBLIC_COPY_FOLDER'
     - rm -rf public
     - ls -la
     - mkdir -p public/test-report && cp -r coverage-report/target/site/jacoco-aggregate/* public/test-report
+    - '[ -f "$OWASP_REPORT_PATH" ] && echo "Copying the latest OWASP report..." && cp $OWASP_REPORT_PATH public'
+    - '[ ! -f "$OWASP_REPORT_PATH" ] && [ -d "$PUBLIC_COPY_FOLDER" ] && echo "Copying the previous OWASP report..." && cp $PUBLIC_COPY_FOLDER/$OWASP_REPORT_NAME public'
+    - cp target/dependency-check-report.html public
     - echo 'Public directory content after copying files'
     - ls -la ./public
   artifacts:
